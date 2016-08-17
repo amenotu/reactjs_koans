@@ -11,8 +11,11 @@ class PartiesList extends React.Component {
   // Doesn't this code look familiar to you?
   render() {
     return (
-      <ul className="FILL ME">
+      <ul className="parties-list">
         <li>Party at Aperture Laboratories</li>
+        <li>Party at This House</li>
+        <li>Party at That House</li>
+        <li>Party at The House of Blues</li>
       </ul>
     );
   }
