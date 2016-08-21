@@ -76,16 +76,20 @@ class WhatsYourName extends React.Component {
   //       entered to the input there.
   onNameChange(event) {
     // Huh... There's something wrong here...
-    !event.target.value ? this.setState({name: "Hey there. Enter your name."}) : this.setState({name: "Hello " + event.target.value});
+    this.setState({ name: event.target.value });
   }
 
   render() {
-    if(this.state.name.length === 0){
-      this.state.name = "Hey there. Enter your name.";
-    }
+    var nameToDisplay;
+    // if(this.state.name.length === 0){
+    //   nameToDisplay = "Hey there. Enter your name.";
+    // } else {
+    //   nameToDisplay = "Hello " + this.state.name;
+    // }
+    this.state.name.length === 0 ? nameToDisplay = "Hey there. Enter your name." : nameToDisplay = "Hello " + this.state.name;
     return (
       <div>
-        <p>{this.state.name}</p>
+        <p>{nameToDisplay}</p>
         <input type="text" name="name" onChange={this.onNameChange} />
       </div>
     );
