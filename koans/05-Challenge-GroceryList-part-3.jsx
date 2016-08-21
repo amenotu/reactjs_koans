@@ -38,6 +38,8 @@ class GroceryList extends React.Component {
       this.setState({
         groceries: this.state.groceries.concat([newGroceryItem])
       });
+    } else {
+      alert("Please enter valid grocery item");
     }
   }
 
@@ -45,6 +47,7 @@ class GroceryList extends React.Component {
   // Hint: You can just simply set the groceries to an empty array.
   clearList() {
     // Put your code here
+    this.setState({ groceries: [] })
   }
 
   render() {
@@ -72,6 +75,7 @@ class GroceryList extends React.Component {
         </ul>
         {newProductInput}
         {newProductAddButton}
+        {clearListButton}
       </div>
     );
   }
