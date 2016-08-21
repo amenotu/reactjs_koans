@@ -35,7 +35,7 @@ class GroceryList extends React.Component {
 
   // Warning: You shouldn't change this method
   inputChanged(event) {
-    this.setState({newGroceryName: event.target.value});
+    this.setState({ newGroceryName: event.target.value });
   }
 
   // Fill the definition of the following method to allow adding new items to the list
@@ -44,8 +44,8 @@ class GroceryList extends React.Component {
   // Hint #3: Name of the new grocery item will be stored in `this.state.newGroceryName`.
   addGroceryItem() {
     if(this.state.newGroceryName){
-      let newGroceryItem = {name: this.state.newGroceryName};
-      this.setState({groceries: this.state.groceries.concat([newGroceryItem])});
+      let newGroceryItem = { name: this.state.newGroceryName };
+      this.setState({ groceries: this.state.groceries.concat([newGroceryItem]) });
     } else {
       alert("Please enter a valid grocery item");
     }
