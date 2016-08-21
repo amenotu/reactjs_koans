@@ -60,7 +60,7 @@ class WhatsYourName extends React.Component {
     // Properties object is called `props`. You can access it with `this.props`.
     // We won't use it in this exercise.
     super(props);
-    this.state = { name: "please enter your name." };
+    this.state = { name: "" };
 
     // Warning! If we don't bind this method - we would not be able to update state.
     this.onNameChange = this.onNameChange.bind(this);
@@ -76,13 +76,16 @@ class WhatsYourName extends React.Component {
   //       entered to the input there.
   onNameChange(event) {
     // Huh... There's something wrong here...
-    !event.target.value ? this.setState({name: "please enter your name."}) : this.setState({name: event.target.value});
+    !event.target.value ? this.setState({name: "Hey there. Enter your name."}) : this.setState({name: "Hello " + event.target.value});
   }
 
   render() {
+    if(this.state.name.length === 0){
+      this.state.name = "Hey there. Enter your name.";
+    }
     return (
       <div>
-        <p>Hello {this.state.name}</p>
+        <p>{this.state.name}</p>
         <input type="text" name="name" onChange={this.onNameChange} />
       </div>
     );

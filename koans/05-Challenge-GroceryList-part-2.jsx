@@ -46,8 +46,6 @@ class GroceryList extends React.Component {
     if(this.state.newGroceryName){
       let newGroceryItem = { name: this.state.newGroceryName };
       this.setState({ groceries: this.state.groceries.concat([newGroceryItem]) });
-    } else {
-      alert("Please enter a valid grocery item");
     }
   }
 
