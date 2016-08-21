@@ -60,7 +60,7 @@ class WhatsYourName extends React.Component {
     // Properties object is called `props`. You can access it with `this.props`.
     // We won't use it in this exercise.
     super(props);
-    this.state = { name: "" };
+    this.state = { name: "please enter your name." };
 
     // Warning! If we don't bind this method - we would not be able to update state.
     this.onNameChange = this.onNameChange.bind(this);
